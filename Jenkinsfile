@@ -13,28 +13,29 @@ pipeline {
             }
         }
         
-        stage('Terraform Init') {
-            steps {
-                script {
-                    // Use withCredentials to set AWS credentials for this stage
-                    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                        dir('jenkins-terraform') { // Assuming Terraform files are in the cloned directory
-                        sh 'terraform init'
-                    }
-                }
-            }
-        }
-
-        stage('Terraform Apply') {
-            steps {
-                script {
-                    // Use withCredentials to set AWS credentials for this stage
-                    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                        dir('jenkins-terraform') { // Assuming Terraform files are in the cloned directory
-                        sh 'terraform apply -auto-approve'
-                    }
+stage('Terraform Init') {
+    steps {
+        script {
+            // Use withCredentials to set AWS credentials for this stage
+            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                dir('terraform-jenkins') { // Assuming Terraform files are in the cloned directory
+                    sh 'terraform init'
                 }
             }
         }
     }
+}
+
+stage('Terraform Apply') {
+    steps {
+        script {
+            // Use withCredentials to set AWS credentials for this stage
+            withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                dir('terraform-jenkins') { // Assuming Terraform files are in the cloned directory
+                    sh 'terraform apply -auto-approve'
+                }
+            }
+        }
+    }
+}
 }
