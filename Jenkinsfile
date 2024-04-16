@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        TF_CLI_ARGS = "-input=false"
+        AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
         AWS_DEFAULT_REGION    = 'us-east-1'
     }
 
@@ -21,7 +22,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    withAWS(credentials: 'aws-credentials') {
+                     {
                         sh 'terraform init'
                     }
                 }
@@ -31,7 +32,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    withAWS(credentials: 'aws-credentials') {
+                     {
                         sh 'terraform apply -auto-approve'
                     }
                 }
