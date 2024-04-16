@@ -10,25 +10,28 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-            script {
-                withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                         sh "git https://$USERNAME:$PASSWORD@github.com/itzchioma/terraform-jenkins.git"
-            }
+                    }
+                }
             }
         }
-        stage('Terraform init') {
+        
+        stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                script {
+                    sh 'terraform init'
+                }
             }
         }
 
-        stage('Apply / Destroy') {
+        stage('Terraform Apply') {
             steps {
                 script {
                     sh 'terraform apply -auto-approve'
                 }
             }
-        }
         }
     }
 }
