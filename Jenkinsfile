@@ -26,7 +26,7 @@ pipeline {
             }
         }
     
-                stage('Terraform Import') 
+                stage('Terraform Import') {
             steps {
                 // Run Terraform commands
                 script {
@@ -38,13 +38,11 @@ pipeline {
                         dir('terraform-jenkins') { // Assuming Terraform files are in the cloned directory
                             sh 'terraform import aws_security_group.security_group sg-0123456789abcdef0'
                         }
-                    sh 'terraform import aws_instance.example i-0123456789abcdef0'
-                    sh 'terraform import aws_security_group.security_group sg-0123456789abcdef0'
                     
                     // Repeat for other resources as needed
                 }
             }
-        }
+        }}
         
         stage('Terraform Apply') {
             steps {
