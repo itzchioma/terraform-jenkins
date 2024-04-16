@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                        sh "git clone https://$USERNAME:$PASSWORD@github.com/itzchioma/terraform-jenkins.git"
+                        sh "git clone https://github.com/itzchioma/terraform-jenkins"
                     }
                 }
             }
