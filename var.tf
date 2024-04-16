@@ -19,6 +19,14 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+# Aws subnetID
+
+variable "aws_subnet" {
+  description = "AWS subnet"
+  type        = string
+  default     = ""
+}
+
 # Ubuntu AMI ID
 variable "ami" {
   type        = string
@@ -42,7 +50,7 @@ variable "name_tag" {
 
 # Key to access the EC2 instance
 variable "key_name" {
-    description = "Key to access the EC2 instance"
-    type = string
-    default = "test"
+  description = "Key to access the EC2 instance"
+  type        = string
+  default     = "test"
 }
