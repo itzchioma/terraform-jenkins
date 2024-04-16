@@ -23,7 +23,7 @@ pipeline {
             steps {
                 script {
                     // Use withCredentials to set AWS credentials for this stage
-                    withAWS([usernamePassword(credentialsId: 'aws-credentials', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh 'terraform init'
                     }
                 }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     // Use withCredentials to set AWS credentials for this stage
-                    withAWS([usernamePassword(credentialsId: 'aws-credentials', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-credentials', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
                         sh 'terraform apply -auto-approve'
                     }
                 }
