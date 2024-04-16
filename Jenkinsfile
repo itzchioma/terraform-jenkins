@@ -38,7 +38,7 @@ pipeline {
                 }
             }
         }
-         /*       stage('Terraform destroy') {
+                stage('Terraform destroy') {
             steps {
                 script {
                     // Use withCredentials to set AWS credentials for this stage
@@ -49,6 +49,6 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
     }
 }
