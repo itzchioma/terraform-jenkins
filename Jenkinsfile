@@ -39,7 +39,7 @@ pipeline {
             }
         }
 
- .              stage('Terraform state list') {
+ .      stage('Terraform state list') {
             steps {
                 script {
                     // Use withCredentials to set AWS credentials for this stage
