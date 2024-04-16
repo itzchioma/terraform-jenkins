@@ -20,7 +20,6 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
                     withAWS(credentials: 'aws-credentials') {
                         sh 'terraform init'
                     }
@@ -31,7 +30,6 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')])
                     withAWS(credentials: 'aws-credentials') {
                         sh 'terraform apply -auto-approve'
                     }
