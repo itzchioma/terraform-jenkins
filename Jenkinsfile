@@ -10,9 +10,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/itzchioma/terraform-jenkins.git'
-                credentialsID: 'itzchioma'
-                branch: 'main'
+                withCredentials([usernamePassword(credentialsId: 'github-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                        sh "git https://$USERNAME:$PASSWORD@github.com/itzchioma/terraform-jenkins.git"
             }
         }
         stage('Terraform init') {
