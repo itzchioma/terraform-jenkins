@@ -53,7 +53,7 @@ stage('Terraform State list') {
 }
 
 
-               /* stage('Terraform destroy') {
+                stage('Terraform destroy') {
             steps {
                 script {
                     // Use withCredentials to set AWS credentials for this stage
@@ -64,6 +64,6 @@ stage('Terraform State list') {
                     }
                 }
             }
-        }*/
+        }
     }
 }
