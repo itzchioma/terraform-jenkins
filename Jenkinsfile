@@ -11,6 +11,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 git 'https://github.com/itzchioma/terraform-jenkins.git'
+                credentialsID: 'itzchioma'
+                branch: 'main'
             }
         }
         stage('Terraform init') {
