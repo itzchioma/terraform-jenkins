@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label "linux"}
 
         environment {
         AWS_ACCESS_KEY_ID     = $"{credentials('aws-access-key-id')}"
