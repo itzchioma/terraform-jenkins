@@ -22,16 +22,16 @@ Step 8: Destroy the infrastructure using Jenkins
 
 ### Next, click on the “Manage Plugins” icon to install the Terraform plugin.
 
-![Manage-Jenkins-Dashboard](images/Manage-Jenkins-Dashboard.png)
+![Manage-Jenkins-Dashboard](https://github.com/itzchioma/terraform-jenkins/blob/main/store-assets/Manage-Jenkins-Dashboard.png)
 
 ### Click on the “Available plugins” tab in the left navigation menu, and enter “Terraform” in the search bar.
 
-![Jenkins-plugins](images/Jenkins-plugins.png)
+![Jenkins-plugins](https://github.com/itzchioma/terraform-jenkins/blob/main/store-assets/Jenkins-plugins.png)
 
 ### Mark the checkbox next to Terraform, and click on “Install without restart.
 ### Once the installation is successful, it is displayed on the progress screen, as shown below. We have the option to restart Jenkins after this step.
 
-![Jenkins-plugins-installation-board](images/Jenkins-plugins-installation-board.png)
+![Jenkins-plugins-installation-board](https://github.com/itzchioma/terraform-jenkins/blob/main/store-assets/Jenkins-plugins-installation-board.png)
 
 ### We have successfully installed the Terraform plugin in Jenkins.
 
@@ -40,12 +40,12 @@ Step 8: Destroy the infrastructure using Jenkins
 ### Before Jenkins can work with the Terraform plugin, we need to install the Terraform binary. 
 ### Navigate to “Dashboard > Manage Jenkins > Global Tool Configuration” page, and scroll to the Terraform section. 
 
-![Jenkins-installation-tab](images/Jenkins-installation-tab.png)
+![Jenkins-installation-tab](https://github.com/itzchioma/terraform-jenkins/blob/main/store-assets/jenkins-installation-tab.png)
 
 ## Step 3: Prepare the Terraform configuration
 
 ### We have a terraform script that would create an ec2 instance with in AWS. The terraform configuration is hosted in this respository.
-![Terraform-config](images/Terraform-config.png)
+![Terraform-config](https://github.com/itzchioma/terraform-jenkins/blob/main/store-assets/Terraform-config.png)
 
 ## Step 4: Create a Jenkinsfile to build the jenkins pipeline
 
