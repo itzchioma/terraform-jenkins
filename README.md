@@ -18,7 +18,7 @@ Step 8: Destroy the infrastructure using Jenkins
 ### After you have logged into jenkins you would install some plugins as seen below:
 ### Once the installation is complete and administrator login is enabled, click on “Manage Jenkins” in the left navigation menu. 
 
-![screenshot of Jenkins-Dashboard](images/https://github.com/itzchioma/terraform-jenkins/blob/main/store-assets/Jenkins-Dashboard.png)
+![Jenkins-Dashboard](images/https://github.com/itzchioma/terraform-jenkins/blob/main/store-assets/Jenkins-Dashboard.png)
 
 ### Next, click on the “Manage Plugins” icon to install the Terraform plugin.
 
