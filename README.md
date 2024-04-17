@@ -2,14 +2,14 @@
 
 ## How to use Jenkins for Terraform management:
 
-Step 1: Install the Terraform plugin on Jenkins
-Step 2: Install Terraform binary
-Step 3: Prepare the Terraform configuration
-step 4: Create a Jenkinsfile
-Step 5: Create a new Jenkins Pipeline
-Step 6: Configure access to AWS
-Step 7: Test the Jenkins Pipeline
-Step 8: Destroy the infrastructure using Jenkins
+- Step 1: Install the Terraform plugin on Jenkins
+- Step 2: Install Terraform binary
+- Step 3: Prepare the Terraform configuration
+- Step 4: Create a Jenkinsfile
+- Step 5: Create a new Jenkins Pipeline
+- Step 6: Configure access to AWS
+- Step 7: Test the Jenkins Pipeline
+- Step 8: Destroy the infrastructure using Jenkins
 
 
 ## Step 1: Install the Terraform plugin on Jenkins
